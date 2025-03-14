@@ -46,12 +46,12 @@ async def pong(ctx):
 @bot.command()
 async def help(ctx):
 	help_message = (
-        "**Available Commands:**\n"
-        "`!help` - Shows this help message.\n"
+		"**Available Commands:**\n"
+		"`!help` - Shows this help message.\n"
         "`!check [filename]` - Upload an image with this command to check it. Default filename is 'Unknown File'.\n"
         "`!ping` - Responds with 'pong'.\n"
         "`!pong` - Responds with 'ping'."
-    )
-    await ctx.send(help_message)
+        )
+	await ctx.send(help_message)
 
 bot.run(TOKEN)
