@@ -37,7 +37,7 @@ async def todo(ctx, list_name: str, *, task: str):
         return
 
     todo_lists[list_name].append({"task": task, "done": False})
-    msg = await ctx.send(f"☑️ **[{list_name}]** {task}")
+    msg = await ctx.send(f"☐ **[{list_name}]** {task}")
     await msg.add_reaction("✅")  # Mark as done
     await msg.add_reaction("❌")  # Remove task
 
