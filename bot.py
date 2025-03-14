@@ -44,6 +44,10 @@ async def pong(ctx):
     await ctx.send("ping")
 
 @bot.command()
+async def kaninokalang(ctx):
+    await ctx.send("sayo lang be")
+
+@bot.command()
 async def wowhelp(ctx):
 	help_message = (
 		"**Available Commands:**\n"
