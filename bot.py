@@ -44,7 +44,7 @@ async def pong(ctx):
     await ctx.send("ping")
 
 @bot.command()
-async def help(ctx):
+async def wowhelp(ctx):
 	help_message = (
 		"**Available Commands:**\n"
 		"`!help` - Shows this help message.\n"
