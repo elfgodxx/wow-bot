@@ -35,4 +35,12 @@ async def check(ctx, filename: str = "Unknown File"):
     await msg.add_reaction("✅")
     await msg.add_reaction("❌")
 
+@bot.command()
+async def ping(ctx):
+    await ctx.send("pong")
+
+@bot.command()
+async def pong(ctx):
+    await ctx.send("ping")
+
 bot.run(TOKEN)
