@@ -48,13 +48,12 @@ async def on_reaction_add(reaction, user):
         return  # Ignore bot reactions
 
     msg = reaction.message
-    content = msg.content
 
     # Find which to-do list the task belongs to
     for list_name, tasks in todo_lists.items():
         for task in tasks:
-            if f"**[{list_name}]** {task['task']}" == content:
-                if reaction.emoji == "✅":
+            if task["msg_id"] == msg.id:  # Match by message ID
+                if reaction.emoji == "✅" and not task["done"]:
                     task["done"] = True
                     await msg.edit(content=f"✅ ~~**[{list_name}]** {task['task']}~~")
                 elif reaction.emoji == "❌":
