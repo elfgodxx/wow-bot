@@ -20,7 +20,7 @@ async def on_ready():
 
 
 @bot.command()
-async def wowsearch(ctx, *, query: str):
+async def wiki(ctx, *, query: str):
     """Provides a direct Wowhead search link for the given query."""
     base_url = "https://www.wowhead.com/search?q="
     search_query = query.replace(" ", "+")  # Replace spaces with '+'
@@ -59,6 +59,7 @@ async def wowhelp(ctx):
 		"**Available Commands:**\n"
 		"`/wowhelp` - Shows this help message.\n"
         "`/check [filename]` - Upload an image with this command to check it. Default filename is 'Unknown File'.\n"
+        "`/wiki` - searches the wowhead site with keyword you added.\n"
         "`/ping` - Responds with 'pong'.\n"
         "`/pong` - Responds with 'ping'."
         )
