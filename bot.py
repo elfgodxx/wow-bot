@@ -18,7 +18,7 @@ bot = commands.Bot(command_prefix="/", intents=intents)
 async def on_ready():
     print(f"Logged in as {bot.user}")
 
-
+# commands added
 @bot.command()
 async def wiki(ctx, *, query: str):
     """Provides a direct Wowhead search link for the given query."""
@@ -53,6 +53,9 @@ async def ping(ctx):
 async def pong(ctx):
     await ctx.send("ping")
 
+# command for help
+# always add a help for your command
+# here each time you add new one
 @bot.command()
 async def wowhelp(ctx):
 	help_message = (
@@ -65,4 +68,5 @@ async def wowhelp(ctx):
         )
 	await ctx.send(help_message)
 
+# bot runner
 bot.run(TOKEN)
