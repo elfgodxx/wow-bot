@@ -2,8 +2,7 @@ import discord
 from discord.ext import commands
 import os
 from dotenv import load_dotenv
-import requests
-from bs4 import BeautifulSoup
+from discord.ext import commands
 
 load_dotenv()  # Load environment variables from .env
 TOKEN = os.getenv("TOKEN")
@@ -22,13 +21,11 @@ async def on_ready():
 
 @bot.command()
 async def wowsearch(ctx, *, query: str):
-    search_url = f"https://www.google.com/search?q={query}"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"}
-    response = requests.get(search_url, headers=headers)
-    soup = BeautifulSoup(response.text, "html.parser")
-    result = soup.find('div', class_='BNeawe').text
-    await ctx.send(f"Top result for '{query}':\n{result}")
+    """Provides a direct Wowhead search link for the given query."""
+    base_url = "https://www.wowhead.com/search?q="
+    search_query = query.replace(" ", "+")  # Replace spaces with '+'
+    search_url = f"{base_url}{search_query}"
+    await ctx.send(f"Search results for '{query}': {search_url}")
 
 @bot.command()
 async def check(ctx, filename: str = "Unknown File"):
