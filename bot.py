@@ -68,5 +68,9 @@ async def wowhelp(ctx):
         )
 	await ctx.send(help_message)
 
+@bot.command()
+async def wowjia(ctx):
+	await ctx.send("**I love my bunsy forever!**\n")
+
 # bot runner
 bot.run(TOKEN)
